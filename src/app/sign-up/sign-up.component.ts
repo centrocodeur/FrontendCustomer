@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit{
 
   signupForm!: FormGroup;
   hidePassword = true;
-  skipLocationChange: true;
+  // skipLocationChange: true;
 
   constructor(private fb: FormBuilder,
               private snackBar: MatSnackBar,
@@ -24,7 +24,8 @@ export class SignUpComponent implements OnInit{
 
   ngOnInit(): void{
     this.signupForm=this.fb.group({
-      name: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      firstname: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]],
       confirmPassword: [null, [Validators.required]],
@@ -41,16 +42,16 @@ export class SignUpComponent implements OnInit{
     const confirmPassword = this.signupForm.get('confirmPassword')?.value;
 
     if(password !== confirmPassword){
-      this.snackBar.open('Passwords do not match.', 'Close', {duration: 5000, panelClass: 'error-snackbar'});
+      this.snackBar.open('Les mots de pass ne sont identiques.', 'Fermer', {duration: 5000, panelClass: 'error-snackbar'});
       return;
     }
     this.authService.register(this.signupForm.value).subscribe(
       (response)=>{
-        this.snackBar.open('Sign up successfull!', 'Close', {duration: 5000});
-        this.router.navigateByUrl("/login");
+        this.snackBar.open('Votre Inscription a réussi !', 'Fermer', {duration: 5000});
+        this.router.navigateByUrl("/validation");
       },
       (error)=>{
-        this.snackBar.open('Sign up failed. please try again.', 'Close', {duration: 5000, panelClass: 'error-snackBar'})
+        this.snackBar.open('Votre Inscription a échoué!. Veuillez réessayer.', 'Fermer', {duration: 5000, panelClass: 'error-snackBar'})
       }
     )
   }

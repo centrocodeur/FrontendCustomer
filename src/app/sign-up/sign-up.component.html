@@ -5,44 +5,54 @@
       <form [formGroup]="signupForm">
 
         <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="name" placeholder="Name" required >
+          <mat-label>Nom </mat-label>
+          <input matInput formControlName="lastname" placeholder="Nom" required >
 
-          <mat-error *ngIf="signupForm.get('name').invalid && signupForm.get('name').touched">
-            please enter a valid name.
+          <mat-error *ngIf="signupForm.get('lastname')?.invalid && signupForm.get('lastname')?.touched">
+            Entrer un nom valide s'il vous plait.
           </mat-error>
         </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Prénom</mat-label>
+          <input matInput formControlName="firstname" placeholder="Prénom" required >
+
+          <mat-error *ngIf="signupForm.get('firstname')?.invalid && signupForm.get('firstname')?.touched">
+            Entrer un prénom valide s'il vous plait.
+          </mat-error>
+        </mat-form-field>
+
 
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput formControlName ="email" placeholder="email" required >
 
-          <mat-error *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">
-            please enter a valid email.
+          <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+            Entrer un mail  valide s'il vous plait.
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput type="{{hidePassword ? 'password': 'text'}}" formControlName = "password" placeholder="Password" required >
+          <mat-label>Mot de passe </mat-label>
+          <input matInput type="{{hidePassword ? 'password': 'text'}}" formControlName = "password" placeholder="Mot de passe " required >
           <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
             <mat-icon>{{hidePassword ? 'visibility_off': 'visibility'}}</mat-icon>
           </button>
 
-          <mat-error *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">
-            please enter a valid password.
+          <mat-error *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+            Entrer un  mot de passe valide s'il vous plait.
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput type="{{hidePassword ? 'password': 'text'}}" formControlName = "confirmPassword" placeholder="Password" required >
+          <mat-label>Confirmer votre mot de passe</mat-label>
+          <input matInput type="{{hidePassword ? 'password': 'text'}}" formControlName = "confirmPassword" placeholder="Mot de passe" required >
           <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
             <mat-icon>{{hidePassword ? 'visibility_off': 'visibility'}}</mat-icon>
           </button>
 
-          <mat-error *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">
-            please enter a valid password.
+          <mat-error *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+            Entrer un  mot de passe valide s'il vous plait.
           </mat-error>
         </mat-form-field>
 
@@ -59,4 +69,3 @@
 
   </mat-card>
 </div>
-
