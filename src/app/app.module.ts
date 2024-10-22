@@ -8,10 +8,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DemoAngularMaterialModule} from "./DemoAngularMaterialModule";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     DemoAngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
     provideAnimationsAsync()
