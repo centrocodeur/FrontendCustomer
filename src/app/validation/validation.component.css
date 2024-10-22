@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
 }
 
 
-.container mat-card{
+mat-card{
   max-width: 400px;
   width: 100%;
   padding: 20px;
@@ -17,13 +17,6 @@
 
    */
 
-
-}
-
-@media screen and (max-width: 500px){
-  mat-card{
-    max-width: 90%;
-  }
 
 }
 
