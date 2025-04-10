@@ -3,8 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {LoginComponent} from "./login/login.component";
 import {ValidationComponent} from "./validation/validation.component";
+import {HomePageComponent} from "./home-page/home-page.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 const routes: Routes = [
+  //{path: " ", component: HomePageComponent},
+
+
+  {path: "home", redirectTo:""},  // l'url racine
+  {path: "", component: HomePageComponent},
   {path: "login", component: LoginComponent},
   {path: "signup",component: SignUpComponent},
   {path: "validation",component: ValidationComponent},
