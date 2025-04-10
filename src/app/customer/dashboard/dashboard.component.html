@@ -1,1 +1,45 @@
-<p>dashboard works!</p>
+<form [formGroup]="searchTicketForm" class="search-form" (submit)="submitForm()">
+  <mat-form-field appearance="outline" class="search-form">
+    <mat-label>Enter keyword to search</mat-label>
+    <input matInput formControlName="title">
+    <button mat-button matSuffix color="primary" [disabled]="searchTicketForm.invalid">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+
+<div class="product-list">
+
+  <mat-card class="product-card" *ngFor="let ticket of tickets" style="width: 300px; height: 490px; justify-items: center">
+    <div class="product-image">
+      <img [src]="ticket.processedImg" alt="product-image">
+    </div>
+    <div class="product-details">
+      <h2 class="product-name" routerLink="/customer/ticket/{{ticket.id}}">{{ticket.name}}</h2>
+      <p class="product-description">{{ticket.description}}</p>
+      <mat-divider></mat-divider>
+
+      <div class="product-info">
+        <div class="info-row">
+          <span class="info-label">Price</span>
+          <span class="info-value">${{ticket.price}}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Category:</span>
+          <span class="info-value">{{ticket.categoryName}}</span>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="actions">
+
+        <button mat-raised-button color="primary" class="update-button" (click)="addToCart(ticket.id)">
+          Réserver
+        </button>
+
+
+      </div>
+    </div>
+
+  </mat-card>
+</div>

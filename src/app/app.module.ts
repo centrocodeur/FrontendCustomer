@@ -11,6 +11,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ValidationComponent } from './validation/validation.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ValidationComponent } from './validation/validation.component';
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    ValidationComponent
+    ValidationComponent,
+    HomePageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

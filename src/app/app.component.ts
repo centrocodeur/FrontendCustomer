@@ -29,6 +29,7 @@ export class AppComponent implements OnInit{
 
   logout(){
     UserStorageService.signOut();
-    this.router.navigateByUrl('login');
+   // this.router.navigateByUrl('login');
+    this.router.navigateByUrl('home');
   }
 }
