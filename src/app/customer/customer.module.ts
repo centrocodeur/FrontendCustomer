@@ -15,6 +15,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import { ViewTicketDetailComponent } from './view-ticket-detail/view-ticket-detail.component';
+import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/material/table";
 
 
 @NgModule({
@@ -39,7 +40,12 @@ import { ViewTicketDetailComponent } from './view-ticket-detail/view-ticket-deta
     MatInput,
     MatButton,
     MatLabel,
-    MatError
+    MatError,
+    MatTable,
+    MatHeaderCell,
+    MatCell,
+    MatHeaderRow,
+    MatRow
   ]
 })
 export class CustomerModule { }
