@@ -29,9 +29,9 @@ export class CustomerService {
   addToCart(ticketId:any): Observable<any>{
     const cartDto= {
       ticketId: ticketId,
-      userId : UserStorageService.getUserId()
+      userId : UserStorageService.getUserId(),
     }
-    return  this.http.post(BASIC_URL+ `api/customer/cart`, cartDto,{
+    return  this.http.post(BASIC_URL+ `api/customer/ticket_cart`, cartDto,{
       headers: this.createAuthorizationHeaders(),
     })
   }
@@ -41,7 +41,7 @@ export class CustomerService {
       ticketId: ticketId,
       userId : UserStorageService.getUserId(),
     }
-    return  this.http.post(BASIC_URL+ `api/customer/addition`, cartDto,{
+    return  this.http.post(BASIC_URL+ `api/customer/ticket/addition`, cartDto,{
       headers: this.createAuthorizationHeaders(),
     })
   }
@@ -51,7 +51,7 @@ export class CustomerService {
       ticketId: ticketId,
       userId : UserStorageService.getUserId(),
     }
-    return  this.http.post(BASIC_URL+ `api/customer/deduction`, cartDto,{
+    return  this.http.post(BASIC_URL+ `api/customer/ticket/deduction`, cartDto,{
       headers: this.createAuthorizationHeaders(),
     })
   }
@@ -59,7 +59,7 @@ export class CustomerService {
   getCartByUserId(): Observable<any>{
     const userId = UserStorageService.getUserId()
 
-    return  this.http.get(BASIC_URL+ `api/customer/cart/${userId}`,{
+    return  this.http.get(BASIC_URL+ `api/customer/ticket_cart/${userId}`,{
       headers: this.createAuthorizationHeaders(),
     })
   }
@@ -75,7 +75,7 @@ export class CustomerService {
   placeOrder(orderDto:any ): Observable<any>{
     orderDto.userId = UserStorageService.getUserId()
 
-    return  this.http.post(BASIC_URL+ `api/customer/placeOrder`, orderDto,{
+    return  this.http.post(BASIC_URL+ `api/customer/ticket/placeOrder`, orderDto,{
       headers: this.createAuthorizationHeaders(),
     })
   }

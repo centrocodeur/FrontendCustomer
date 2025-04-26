@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: CustomerComponent },
   { path: 'dashboard', component: DashboardComponent },
   {path: 'cart', component: CartComponent},
-  {path: 'my_orders', component: MyOrdersComponent},
+  {path: 'myOrders', component: MyOrdersComponent},
   {path: 'ticket/:ticketId', component: ViewTicketDetailComponent},
   {path: "**", component: PageNotFoundComponent},
 ];
