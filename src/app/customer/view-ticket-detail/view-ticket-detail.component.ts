@@ -48,9 +48,9 @@ export class ViewTicketDetailComponent {
     }
     this.customerService.addTicketToWishlist(wishlistDto).subscribe(res =>{
       if (res.id != null){
-        this.snackBar.open('Ticket Added to wishlist Successfully', 'Close',{duration:5000});
+        this.snackBar.open('OK!', 'Fermer',{duration:5000});
       } else {
-        this.snackBar.open("Already in wishlist", 'ERROR', {duration:5000});
+        this.snackBar.open("Message déjà renseigné", 'ERROR', {duration:5000});
       }
     })
   }

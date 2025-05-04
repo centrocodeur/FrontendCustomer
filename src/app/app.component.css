@@ -59,3 +59,116 @@ button.active{
 .custom-toolbar{
   background-color: #ff0000;
 }
+.brand{
+  font-size: 18px;
+
+}
+.navBar_no_login{
+  display: flex;
+  align-items: flex-end;
+}
+
+mat-toolbar{
+  display: flex;
+  justify-items: flex-end;
+}
+
+
+mat-toolbar button{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@media screen and (max-width:1920px){
+  .carousel-wrapper{
+    width: 200vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  h3{
+    margin-left: 800px;
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width:1200px){
+  .carousel-wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  h3{
+    margin-left: 800px;
+    font-size: 35px;
+  }
+
+}
+
+@media screen and (max-width:992px){
+  /*img{
+    width: 100vw;
+    height: 100vh;
+  }*/
+  .carousel-wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  h3{
+    margin-left: 800px;
+    font-size: 35px;
+  }
+  .logo{
+    margin-left: 256px;
+    margin-right: 256px;
+
+    width: 250px;
+    height: 180px;
+
+  }
+  .imgCarrousel{
+    width: 1000px;
+    height: 550px;
+    margin-left: 20px;
+  }
+
+}
+
+@media screen and (max-width:768px){
+  .carousel-wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  h3{
+    margin-left: 800px;
+    font-size: 35px;
+  }
+  .logo{
+    margin-left: 180px;
+    width: 230px;
+    height: 220px;
+    border-radius: 10px;
+  }
+  .carouselimage{
+    margin-left: auto;;
+  }
+  .imgCarrousel{
+    width: 500px;
+    height: 350px;
+  }
+  .homHeader{
+    margin: auto;
+    height: 800px ;
+  }
+  div button {
+    flex-direction: row;
+  }
+  mat-toolbar button {
+    flex-direction: column;
+  }
+
+}

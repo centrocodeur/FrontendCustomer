@@ -3,9 +3,9 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {UserStorageService} from "../../servicies/storage/user-storage.service";
 
-//const BASIC_URL= "http://localhost:8080/";
+const BASIC_URL= "http://localhost:8080/";
 //const BASIC_URL= "https://studiprojetbackend-production.up.railway.app/";
-const BASIC_URL= "https://studi-jo-backend-production.up.railway.app/";
+//const BASIC_URL= "https://studi-jo-backend-production.up.railway.app/";
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +16,13 @@ export class CustomerService {
 
   getAllTickets(): Observable<any>{
     return  this.http.get(BASIC_URL+ 'api/customer/tickets', {
+      headers: this.createAuthorizationHeaders(),
+    })
+  }
+
+
+  getAllCompetitions(): Observable<any>{
+    return  this.http.get(BASIC_URL+ 'api/customer/competitions', {
       headers: this.createAuthorizationHeaders(),
     })
   }
@@ -32,6 +39,17 @@ export class CustomerService {
       userId : UserStorageService.getUserId(),
     }
     return  this.http.post(BASIC_URL+ `api/customer/ticket_cart`, cartDto,{
+      headers: this.createAuthorizationHeaders(),
+    })
+  }
+
+
+  deleteFromCart(userId:any): Observable<any>{
+    const cartDto= {
+      //ticketId: ticketId,
+      userId : UserStorageService.getUserId(),
+    }
+    return  this.http.delete(BASIC_URL+ `api/customer/ticket_cart/${userId}`, {
       headers: this.createAuthorizationHeaders(),
     })
   }

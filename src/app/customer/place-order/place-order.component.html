@@ -1,28 +1,34 @@
 <div class="container">
   <mat-card>
-    <mat-card-title>Place Order</mat-card-title>
+    <mat-card-title>Valider votre achat</mat-card-title>
 
     <mat-card-content>
       <form [formGroup]="orderForm">
 
         <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-           <input matInput formControlName="email" placeholder="email" required>
-          <mat-error *ngIf="orderForm.get('email').invalid && orderForm.get('email').touched">
-            This Input is Required!
+          <mat-label>Informations pour le paiement</mat-label>
+<!--           <input matInput formControlName="payment" placeholder="p" required>-->
+          <mat-label> Choisir votre mode de payement  </mat-label>
+          <mat-select formControlName ="payment" name="payment">
+            <mat-option *ngFor="let pay of payments" [value]="pay">
+              {{pay}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="orderForm.get('payment').invalid && orderForm.get('payment').touched">
+            Champs Obligatoire
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+       <mat-form-field appearance="outline">
           <mat-label>Description</mat-label>
-          <input matInput formControlName="orderDescription" placeholder="Description">
+          <input matInput formControlName="orderDescription" placeholder="Description" [defaultValue]="description">
         </mat-form-field>
 
         <div class="button-row">
 
           <button mat-raised-button color="primary" type="submit" [disabled]="orderForm.invalid"
-                  (click)="placeOrder()" class="order-button">Order</button>
-          <button mat-stroked-button color="warn" class="close-button" (click)="closeForm()"> Close</button>
+                  (click)="placeOrder()" class="order-button">Valider</button>
+          <button mat-stroked-button color="warn" class="close-button" (click)="closeForm()"> Annuler</button>
 
 
         </div>

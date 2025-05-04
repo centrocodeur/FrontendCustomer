@@ -1,25 +1,40 @@
 
-<div  *ngIf="!isCustomerLoggedIn">
-  <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Jeux Olympique Paris 2024 </span>
+<div *ngIf="!isCustomerLoggedIn" class="d-flex flex-row-reverse">
+  <mat-toolbar color="primary">
+     <span class="navbar-brand text-uppercase brand">Jeux Olympiques Paris 2024 </span>
     <span class="spacer"> </span>
-    <button mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
-    <button mat-button routerLink="/signup" routerLinkActive="active">Inscription</button>
-    <button mat-button routerLink="/login" routerLinkActive="active">Connection</button>
+
+    <div class="navBar_no_login ">
+    <button class="btn btn-info" mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
+    <button class="btn btn-info" mat-button routerLink="/signup" routerLinkActive="active">Inscription</button>
+    <button class="btn btn-info" mat-button routerLink="/login" routerLinkActive="active">Connection</button>
+    </div>
   </mat-toolbar>
 </div>
 
 <div  *ngIf="isCustomerLoggedIn">
 
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">Jeux Olympique Paris 2024</span>
+    <span class="navbar-brand text-uppercase brand text-bg-light">Jeux Olympiques Paris 2024</span>
     <span class="spacer"> </span>
-    <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Les offres</button>
-    <button mat-button routerLink="/customer/cart" routerLinkActive="active">Mon panier</button>
-    <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Mes achats</button>
-    <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Mes favories</button>
-    <button mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
-    <button mat-button routerLinkActive="active" (click)="logout()" >Déconnexion</button>
+
+    <!--<div class="container-fluid m-2">
+     <img class="img img-burger" src="assets/images/burger.png" (click)="openMenu()" *ngIf="burgerOpen"/>
+      <nav>
+        <div class="bordnav d-flex flex-column align-item-start m-1 bg-primary" >
+        <div class="d-flex flex-column align-item-start m-1">-->
+    <button class="btn btn-info"  mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
+    <button class="btn btn-info"  mat-button routerLink="/customer/dashboard" routerLinkActive="active">Les offres</button>
+    <button class="btn btn-info"  mat-button routerLink="/customer/cart" routerLinkActive="active">Mon panier</button>
+    <button class="btn btn-info"  mat-button routerLink="/customer/my_orders" routerLinkActive="active">Mes achats</button>
+    <button class="btn btn-info"  mat-button routerLink="/customer/wishlist" routerLinkActive="active">Mes favories</button>
+    <button class="btn btn-info"  mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
+    <button class="btn btn-info" mat-button routerLinkActive="active" (click)="logout()" >Déconnexion</button>
+       <!-- </div>
+        </div>
+      </nav>
+    </div>-->
+
   </mat-toolbar>
 </div>
 

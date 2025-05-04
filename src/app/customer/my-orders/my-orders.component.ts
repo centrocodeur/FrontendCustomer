@@ -21,6 +21,8 @@ export class MyOrdersComponent implements OnInit{
   getMyOrders(){
     this.customerService.getOrdersByUserId().subscribe(res =>{
       this.myOrders= res;
+      console.log(this.myOrders)
+      //console.log(this.myOrders[0])
     })
   }
 
