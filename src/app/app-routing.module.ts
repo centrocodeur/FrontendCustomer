@@ -10,8 +10,8 @@ const routes: Routes = [
   //{path: " ", component: HomePageComponent},
 
 
-  {path: "home", redirectTo:""},  // l'url racine
-  {path: "", component: HomePageComponent},
+  {path: " ", redirectTo:"/home", pathMatch :"full"},  // l'url racine
+  {path: "home", title:"Accueil", component: HomePageComponent},
   {path: "login", component: LoginComponent},
   {path: "signup",component: SignUpComponent},
   {path: "validation",component: ValidationComponent},

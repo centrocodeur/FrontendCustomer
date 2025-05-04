@@ -15,18 +15,41 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import { ViewTicketDetailComponent } from './view-ticket-detail/view-ticket-detail.component';
-import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/material/table";
+import {
+  MatCell,
+  MatCellDef, MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef,
+  MatRow, MatRowDef,
+  MatTable
+} from "@angular/material/table";
+import { FooterComponent } from './footer/footer.component';
+import { MarqueComponent } from './marque/marque.component';
+import { HeaderComponent } from './header/header.component';
+import {MatOption, MatSelect} from "@angular/material/select";
+import { ConditionsComponent } from './conditions/conditions.component';
+import { CoukiesComponent } from './coukies/coukies.component';
 
 
 @NgModule({
-  declarations: [
-    CustomerComponent,
-    DashboardComponent,
-    CartComponent,
-    PlaceOrderComponent,
-    MyOrdersComponent,
-    ViewTicketDetailComponent
-  ],
+    declarations: [
+        CustomerComponent,
+        DashboardComponent,
+        CartComponent,
+        PlaceOrderComponent,
+        MyOrdersComponent,
+        ViewTicketDetailComponent,
+        FooterComponent,
+        MarqueComponent,
+        HeaderComponent,
+        ConditionsComponent,
+        CoukiesComponent
+    ],
+    exports: [
+        FooterComponent,
+        MarqueComponent
+    ],
   imports: [
     CommonModule,
     CustomerRoutingModule,
@@ -45,7 +68,14 @@ import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/m
     MatHeaderCell,
     MatCell,
     MatHeaderRow,
-    MatRow
+    MatRow,
+    MatCellDef,
+    MatHeaderCellDef,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatColumnDef,
+    MatSelect,
+    MatOption
   ]
 })
 export class CustomerModule { }

@@ -1,0 +1,59 @@
+.footer{
+  background-color: #3f51b5;
+  color: white;
+  font-family:'Hind', Arial, Helvetica, sans-serif;
+  height: 10vh;
+  width:100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a{
+  color: #fff;
+}
+/* Nouvelles règles si la fenêtre fait au plus 360px de large */
+@media screen and (max-width: 1920px) {
+  .footer{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 24px;
+  }
+  a {
+    margin-bottom: 1vh;
+  }
+}
+/* Nouvelles règles si la fenêtre fait au plus 360px de large */
+@media screen and (max-width: 1200px) {
+  .footer{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 24px;
+  }
+}
+/* Nouvelles règles si la fenêtre fait au plus 360px de large */
+@media screen and (max-width: 992px) {
+  .footer{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 15px;
+  }
+}
+/* Nouvelles règles si la fenêtre fait au plus 360px de large */
+@media screen and (max-width: 768px) {
+  .footer{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 12px;
+  }
+}
+/* Nouvelles règles si la fenêtre est en orientation portrait */
+@media screen and (orientation: portrait) {
+  .footer{
+    margin: 0;
+    font-size: 9px;
+  }
+  a {
+    text-align: center;
+  }
+}

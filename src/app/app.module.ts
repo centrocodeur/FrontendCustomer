@@ -13,6 +13,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ValidationComponent } from './validation/validation.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CustomerModule} from "./customer/customer.module";
 
 
 @NgModule({
@@ -32,6 +34,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
+    NgbCarouselModule,
+    CustomerModule
 
   ],
   providers: [

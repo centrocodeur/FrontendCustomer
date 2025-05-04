@@ -4,6 +4,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {CustomerService} from "../services/customer.service";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
+import {Payment} from "../payment.model";
 
 @Component({
   selector: 'app-place-order',
@@ -13,6 +14,8 @@ import {MatDialog} from "@angular/material/dialog";
 export class PlaceOrderComponent implements OnInit{
 
   orderForm!: FormGroup;
+  payments: string [] = ['CARTE_VISA','CARTE_CREDIT','MASTERCARD'];
+  description= "Billet des jeux Olympiques Paris 2024";
 
   constructor(
     private fb: FormBuilder,
@@ -25,20 +28,20 @@ export class PlaceOrderComponent implements OnInit{
 
   ngOnInit() {
     this.orderForm= this.fb.group({
-      email: [null, [Validators.required]],
-      orderDescription: [null],
+      payment: [null, [Validators.required]],
+      orderDescription: [this.description],
     })
   }
 
   placeOrder(){
     this.customerService.placeOrder(this.orderForm.value).subscribe(res=>{
       if(res.id!= null){
-        this.snackBar.open("Order placed successfully", "Close", {duration:5000})
-        this.router.navigateByUrl("/customer/myOrders");
+        this.snackBar.open("Votre billet électronique vous été envoyé dans votre boîte mail", "Fermer", {duration:5000})
+        this.router.navigateByUrl("/customer/my_orders");
         this.closeForm();
 
       }else {
-        this.snackBar.open("Something went wrong", "Close", {duration:5000})
+        this.snackBar.open("Une erreur s'est produit", "Fermer", {duration:5000})
       }
     })
   }

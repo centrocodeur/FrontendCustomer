@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit{
         }
       },
       (error)=>{
-        this.snackBar.open('Bad credentials','ERROR', {duration:500})
+        this.snackBar.open('Vérifier votre mot de passe et votre Email','ERROR', {duration:500})
       }
     )
   }

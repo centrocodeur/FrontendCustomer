@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+}
+p {
+  text-align: justify;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  font-size: 2vh;
+}
+.btn {
+  font-size: 3vh;
+}

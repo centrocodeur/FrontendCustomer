@@ -9,7 +9,8 @@ import {UserStorageService} from "./servicies/storage/user-storage.service";
 })
 export class AppComponent implements OnInit{
   title = 'FrontendCustomer';
-
+  menuOpen: boolean = false;
+  burgerOpen: boolean =true;
 
 
   isCustomerLoggedIn: boolean = UserStorageService.isCustomerLoggedIn();
@@ -25,8 +26,14 @@ export class AppComponent implements OnInit{
       this.isAdminLoggedIn= UserStorageService.isAdminLoggedIn();
     })
 
+
+
   }
 
+  openMenu() {
+    this.menuOpen = !this.menuOpen;
+    this.burgerOpen = !this.menuOpen;
+  }
   logout(){
     UserStorageService.signOut();
    // this.router.navigateByUrl('login');

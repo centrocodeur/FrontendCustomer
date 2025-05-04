@@ -32,12 +32,12 @@ export class CartComponent implements OnInit{
 
   applyCoupon() {
     this.customerService.applyCoupon(this.couponForm.get(['code'])!.value).subscribe(res => {
-      this.snackBar.open("Coupon Applied Successfully", 'Close', {
+      this.snackBar.open("OK", 'Fermer', {
         duration: 5000
       });
       this.getCart();
     }, error => {
-      this.snackBar.open(error.error, 'Close',{duration: 5000});
+      this.snackBar.open(error.error, 'Fermer',{duration: 5000});
     })
   }
 
@@ -52,16 +52,28 @@ export class CartComponent implements OnInit{
     })
   }
 
+  deleteCart(userId){
+    this.customerService.deleteFromCart(userId).subscribe( res=> {
+      if (res = null) {
+        this.snackBar.open('OK!', 'Fermer', {
+          duration: 5000
+
+        });
+      }
+    });
+  }
+
+
   increaseQuantity(ticketId:any){
     this.customerService.increaseTicketQuantity(ticketId).subscribe(res =>{
-      this.snackBar.open('Ticket quantity increased.', 'Close', {duration:5000});
+      this.snackBar.open('OK', 'Fermer', {duration:5000});
       this.getCart();
     })
   }
 
   decreaseQuantity(ticketId:any){
     this.customerService.decreaseTicketQuantity(ticketId).subscribe(res =>{
-      this.snackBar.open('Product quantity decreased.', 'Close', {duration:5000});
+      this.snackBar.open('OK.', 'Fermer', {duration:5000});
       this.getCart();
     })
   }
