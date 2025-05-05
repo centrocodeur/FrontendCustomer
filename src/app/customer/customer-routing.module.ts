@@ -7,6 +7,7 @@ import {MyOrdersComponent} from "./my-orders/my-orders.component";
 import {ViewTicketDetailComponent} from "./view-ticket-detail/view-ticket-detail.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {ConditionsComponent} from "./conditions/conditions.component";
+import {HomePageComponent} from "../home-page/home-page.component";
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
