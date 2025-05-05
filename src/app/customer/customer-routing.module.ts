@@ -9,7 +9,8 @@ import {PageNotFoundComponent} from "../page-not-found/page-not-found.component"
 import {ConditionsComponent} from "./conditions/conditions.component";
 
 const routes: Routes = [
-  { path: '', component: CustomerComponent },
+  { path: '', component: HomePageComponent},
+  {path: 'home', title:'Accueil', component: HomePageComponent},
   { path: 'dashboard', title:'Tableau de bord', component: DashboardComponent },
   {path: 'cart',title:'mon panier', component: CartComponent},
   {path: 'my_orders', title:'Mes achats', component: MyOrdersComponent},
