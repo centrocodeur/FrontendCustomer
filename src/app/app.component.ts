@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   title = 'FrontendCustomer';
   menuOpen: boolean = false;
   burgerOpen: boolean =true;
+  connexionDuration: number=1000 * 60 * 30;
 
 
   isCustomerLoggedIn: boolean = UserStorageService.isCustomerLoggedIn();
@@ -25,7 +26,7 @@ export class AppComponent implements OnInit{
       this.isCustomerLoggedIn =UserStorageService.isCustomerLoggedIn();
       this.isAdminLoggedIn= UserStorageService.isAdminLoggedIn();
     })
-
+    this.autoLogout();
 
 
   }
@@ -39,4 +40,10 @@ export class AppComponent implements OnInit{
    // this.router.navigateByUrl('login');
     this.router.navigateByUrl('home');
   }
+  autoLogout(){
+    window.setTimeout(()=>{
+      this.logout()
+    },this.connexionDuration)
+  }
+
 }

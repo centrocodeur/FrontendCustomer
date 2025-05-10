@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from "../services/customer.service";
+import {Router} from "@angular/router";
+import {UserStorageService} from "../../servicies/storage/user-storage.service";
 
 @Component({
   selector: 'app-my-orders',
@@ -11,11 +13,13 @@ export class MyOrdersComponent implements OnInit{
 
   myOrders: any;
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.getMyOrders();
+    this.autoLogout();
   }
 
   getMyOrders(){
@@ -25,5 +29,17 @@ export class MyOrdersComponent implements OnInit{
       //console.log(this.myOrders[0])
     })
   }
+
+  logout(){
+    UserStorageService.signOut();
+    // this.router.navigateByUrl('login');
+    this.router.navigateByUrl('customer/dashboard');
+  }
+  autoLogout(){
+    window.setTimeout(()=>{
+      this.logout()
+    },1000*60*10)
+  }
+
 
 }

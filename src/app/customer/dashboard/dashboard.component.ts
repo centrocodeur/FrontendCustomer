@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {CustomerService} from "../services/customer.service";
+import {UserStorageService} from "../../servicies/storage/user-storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +17,8 @@ export class DashboardComponent implements OnInit{
 
   constructor(private customerService: CustomerService,
               private fb: FormBuilder,
-              private  snackBar: MatSnackBar) {
+              private  snackBar: MatSnackBar,
+              private router: Router) {
   }
 
 
@@ -53,6 +56,16 @@ export class DashboardComponent implements OnInit{
       this.snackBar.open("OK!","Fermer", {duration: 5000})
     })
 
+  }
+  logout(){
+    UserStorageService.signOut();
+    // this.router.navigateByUrl('login');
+    this.router.navigateByUrl('home');
+  }
+  autoLogout(){
+    window.setTimeout(()=>{
+      this.logout()
+    },1000*60*30)
   }
 
 
