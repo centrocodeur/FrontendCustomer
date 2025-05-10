@@ -3,7 +3,7 @@ div{
   font-family:'Hind', Arial, Helvetica, sans-serif;
 }
 
-h1,h2, h3{
+h1,h2, h3,h4{
   margin: 15px;
   text-decoration: underline;
 }
@@ -18,17 +18,30 @@ h2{
   margin-left: 25px;
 }
 
+div{
+  background-color: #f8f8f8;
+  justify-content: center;
+}
 h3{
   font-size: 20px;
   margin-left: 25px;
 }
 
-p{
+h4{
   font-size: 18px;
-  text-align: justify;
   margin-left: 25px;
-  margin-right: 50px;
-  line-height: 40px;
 
 }
 
+p{
+  font-size: 16px;
+  text-align: justify;
+  margin-left: 25px;
+  margin-right: 50px;
+  line-height: 30px;
+
+}
+
+span{
+  text-decoration: underline;
+}

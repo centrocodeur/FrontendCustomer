@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit{
 
 
     })
+    this.autoLogout();
   }
 
 
@@ -51,6 +52,18 @@ export class LoginComponent implements OnInit{
         this.snackBar.open('Vérifier votre mot de passe et votre Email','ERROR', {duration:500})
       }
     )
+  }
+
+
+  logout(){
+    UserStorageService.signOut();
+    // this.router.navigateByUrl('login');
+    this.router.navigateByUrl('home');
+  }
+  autoLogout(){
+    window.setTimeout(()=>{
+      this.logout()
+    },1000*60*10)
   }
 
 }

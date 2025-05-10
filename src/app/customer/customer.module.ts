@@ -30,6 +30,8 @@ import { HeaderComponent } from './header/header.component';
 import {MatOption, MatSelect} from "@angular/material/select";
 import { ConditionsComponent } from './conditions/conditions.component';
 import { CoukiesComponent } from './coukies/coukies.component';
+import { ContactComponent } from './contact/contact.component';
+import { MentionsComponent } from './mentions/mentions.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { CoukiesComponent } from './coukies/coukies.component';
         MarqueComponent,
         HeaderComponent,
         ConditionsComponent,
-        CoukiesComponent
+        CoukiesComponent,
+        ContactComponent,
+        MentionsComponent
     ],
     exports: [
         FooterComponent,

@@ -1,39 +1,36 @@
 
 <div *ngIf="!isCustomerLoggedIn" class="d-flex flex-row-reverse">
-  <mat-toolbar color="primary">
-     <span class="navbar-brand text-uppercase brand">Jeux Olympiques Paris 2024 </span>
+  <mat-toolbar color="primary gNarBar">
+    <span class="navbar-brand text-uppercase brand w-auto logoltr">Jeux Olympiques Paris 2024 </span>
     <span class="spacer"> </span>
 
-    <div class="navBar_no_login ">
-    <button class="btn btn-info" mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
-    <button class="btn btn-info" mat-button routerLink="/signup" routerLinkActive="active">Inscription</button>
-    <button class="btn btn-info" mat-button routerLink="/login" routerLinkActive="active">Connection</button>
+
+    <div class="navBar_no_login myNavBar">
+      <button class="btn btn-info" mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
+      <button class="btn btn-info" mat-button routerLink="/signup" routerLinkActive="active">Inscription</button>
+      <button class="btn btn-info" mat-button routerLink="/login" routerLinkActive="active">Connection</button>
     </div>
   </mat-toolbar>
 </div>
 
 <div  *ngIf="isCustomerLoggedIn">
 
-  <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand text-uppercase brand text-bg-light">Jeux Olympiques Paris 2024</span>
+  <mat-toolbar color="primary" class="gNarBar">
+    <span class="navbar-brand text-uppercase brand text-bg-light logoltr">Jeux Olympiques Paris 2024</span>
+    <span class="spacer"> </span>
+    <img src="assets/images/logo1.jpg" class="logo d-block w-auto">
     <span class="spacer"> </span>
 
-    <!--<div class="container-fluid m-2">
-     <img class="img img-burger" src="assets/images/burger.png" (click)="openMenu()" *ngIf="burgerOpen"/>
-      <nav>
-        <div class="bordnav d-flex flex-column align-item-start m-1 bg-primary" >
-        <div class="d-flex flex-column align-item-start m-1">-->
-    <button class="btn btn-info"  mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
-    <button class="btn btn-info"  mat-button routerLink="/customer/dashboard" routerLinkActive="active">Les offres</button>
-    <button class="btn btn-info"  mat-button routerLink="/customer/cart" routerLinkActive="active">Mon panier</button>
-    <button class="btn btn-info"  mat-button routerLink="/customer/my_orders" routerLinkActive="active">Mes achats</button>
-    <button class="btn btn-info"  mat-button routerLink="/customer/wishlist" routerLinkActive="active">Mes favories</button>
-    <button class="btn btn-info"  mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
-    <button class="btn btn-info" mat-button routerLinkActive="active" (click)="logout()" >Déconnexion</button>
-       <!-- </div>
-        </div>
-      </nav>
-    </div>-->
+    <div class="myNavBar">
+      <button class="btn btn-info"  mat-button routerLink="/home" routerLinkActive="active">Accueil</button>
+      <button class="btn btn-info"  mat-button routerLink="/customer/dashboard" routerLinkActive="active">Les offres</button>
+      <button class="btn btn-info"  mat-button routerLink="/customer/cart" routerLinkActive="active">Mon panier</button>
+      <button class="btn btn-info"  mat-button routerLink="/customer/my_orders" routerLinkActive="active">Mes achats</button>
+      <!-- <button class="btn btn-info"  mat-button routerLink="/customer/wishlist" routerLinkActive="active">Mes favories</button>
+       <button class="btn btn-info"  mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>-->
+      <button class="btn btn-info" mat-button routerLinkActive="active" (click)="logout()" >Déconnexion</button>
+    </div>
+
 
   </mat-toolbar>
 </div>

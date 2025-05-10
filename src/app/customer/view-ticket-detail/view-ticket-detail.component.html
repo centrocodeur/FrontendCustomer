@@ -29,22 +29,22 @@
       <div class="review-details">
         <h2>{{review.description}}</h2>
         <div class="details-row">
-          <p class="rating">Rating: {{review.rating}}</p>
-          <p class="username">Username: {{review.username}}</p>
+          <p class="rating">Fréquence: {{review.rating}}</p>
+          <p class="username">Nom utilisateur: {{review.username}}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<h1 class="section-heading" *ngIf="FAQS.length>0">Frequently Asked Questions</h1>
+<h1 class="section-heading" *ngIf="FAQS.length>0"> Questions Frequentes </h1>
 <div *ngIf="FAQS" class="faq-list">
   <div class="center-container">
     <div *ngFor="let faq of FAQS" class="faq-card">
       <div class="faq-details">
         <p class="question">Question:</p>
         <p class="question-text">{{faq.question}}</p>
-        <p class="answer">Answer:</p>
+        <p class="answer">Repondre:</p>
         <p class="answer-text">{{faq.answer}}</p>
       </div>
     </div>

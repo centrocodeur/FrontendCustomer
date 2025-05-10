@@ -1,31 +1,21 @@
-.navbar{
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-}
-
-.navbar-brand{
-  font-size: 20px;
-  font-weight: 600;
-  margin-right: 16px;
-}
-
-.spacer{
-  flex: 1;
-}
 
 
 .navbar{
   display: flex;
   align-items: center;
   padding: 0 16px;
+  margin-top: 10px;
 }
 
 .navbar-brand{
   font-size: 20px;
-  font-weight: 600;
-  margin-right: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+
 }
+
+
+
 
 .spacer{
   flex: 1;
@@ -41,9 +31,6 @@ button.active{
   font-weight: 600;
 }
 
-.custom-toolbar{
-  background-color: #ff0000;
-}
 
 
 button {
@@ -56,13 +43,7 @@ button.active{
   font-weight: 600;
 }
 
-.custom-toolbar{
-  background-color: #ff0000;
-}
-.brand{
-  font-size: 18px;
 
-}
 .navBar_no_login{
   display: flex;
   align-items: flex-end;
@@ -79,26 +60,57 @@ mat-toolbar button{
   flex-direction: column;
 }
 
+.myNavBar{
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.myNavBar button{
+  justify-content: center;
+  text-justify: auto;
+  margin-top: 10px;
+
+
+}
+
+
+.logo{
+  margin-left: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.gNarBar img{
+  margin-left: auto;
+
+}
+
+
+.gNarBar{
+  width: 100%;
+  position: relative;
+  margin: 5px;
+  height: 120px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+
 
 
 @media screen and (max-width:1920px){
-  .carousel-wrapper{
-    width: 200vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+
   h3{
     margin-left: 800px;
     font-size: 35px;
   }
+
 }
 
 @media screen and (max-width:1200px){
-  .carousel-wrapper{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+
   h3{
     margin-left: 800px;
     font-size: 35px;
@@ -107,15 +119,10 @@ mat-toolbar button{
 }
 
 @media screen and (max-width:992px){
-  /*img{
-    width: 100vw;
-    height: 100vh;
-  }*/
-  .carousel-wrapper{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  .gNarBar img{
+    height: 70px;
   }
+
 
   h3{
     margin-left: 800px;
@@ -129,20 +136,29 @@ mat-toolbar button{
     height: 180px;
 
   }
-  .imgCarrousel{
-    width: 1000px;
-    height: 550px;
-    margin-left: 20px;
+
+
+
+
+
+  .myNavBar{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding-top: 10px;
+
+    padding-right: 10px ;
+    margin-top: 118px;
+    margin-right: 0px;
+    background-color: #2c387e;
   }
+
 
 }
 
 @media screen and (max-width:768px){
-  .carousel-wrapper{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+
   h3{
     margin-left: 800px;
     font-size: 35px;
@@ -153,22 +169,75 @@ mat-toolbar button{
     height: 220px;
     border-radius: 10px;
   }
-  .carouselimage{
-    margin-left: auto;;
+
+  .gNarBar img{
+    height: 50px;
+
   }
-  .imgCarrousel{
-    width: 500px;
-    height: 350px;
-  }
-  .homHeader{
-    margin: auto;
-    height: 800px ;
-  }
+
+
   div button {
     flex-direction: row;
   }
   mat-toolbar button {
     flex-direction: column;
   }
+  .myNavBar{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+  }
 
+
+  .gNarBar{
+    width: 100%;
+    position: relative;
+    margin: 5px;
+    height: 10px;
+    border-radius: 10px;
+    font-size: 10px;
+
+  }
+
+
+  .gNarBar{
+    width: 100%;
+    position: relative;
+    margin: 5px;
+    height: 80px;
+    border-radius: 10px;
+    justify-content: center;
+  }
+
+  .logoltr{
+    font-size: 6px;
+    padding-left: 20px;
+
+  }
+  .gNarBar span{
+    font-size: 10px;
+    margin-left: 50px;
+  }
+
+
+}
+
+@media screen and (max-width:450px){
+
+
+  .gNarBar{
+    padding: 10px;
+  }
+  .myNavBar{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+
+  }
+
+  .gNarBar span{
+    font-size: 1px;
+    margin-left: 50px;
+  }
 }

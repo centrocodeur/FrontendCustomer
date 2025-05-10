@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../servicies/auth/auth.service";
 import {Router} from "@angular/router";
+import {UserStorageService} from "../servicies/storage/user-storage.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -31,6 +32,7 @@ export class SignUpComponent implements OnInit{
       confirmPassword: [null, [Validators.required]],
 
     })
+    this.autoLogout();
   }
 
   togglePasswordVisibility(){
@@ -56,5 +58,15 @@ export class SignUpComponent implements OnInit{
     )
   }
 
+  logout(){
+    UserStorageService.signOut();
+    // this.router.navigateByUrl('login');
+    this.router.navigateByUrl('home');
+  }
+  autoLogout(){
+    window.setTimeout(()=>{
+      this.logout()
+    },1000*60*10)
+  }
 
 }

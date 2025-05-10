@@ -1,3 +1,91 @@
+
+<div class="homHeader">
+
+
+
+  <img src="assets/logo.png" class="logo d-block">
+
+  <div class="carouselimage">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let image of images">
+        <div class="carousel-inner">
+          <img src="assets/{{image.name}}" alt="" lazy-loading="" class="d-block w-100 imgCarrousel">
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
+<mat-divider></mat-divider>
+
+
+<div class="lesOffres" >
+  <button class="btn btn-info bg-light " mat-button routerLink="/login" routerLinkActive="active">Voir les offres </button>
+</div>
+
+<section class="show_comptetitions">
+  <div class="product-list">
+
+    <mat-card class="product-card" *ngFor="let competition of competitions">
+      <div class="product-image">
+        <img [src]="competition.urlImg" alt="competition-image">
+      </div>
+      <div class="product-details">
+        <p class="product-description">{{competition.name}}</p>
+        <!--        <mat-divider></mat-divider>-->
+
+        <div class="product-info">
+          <div class="info-row">
+            <span class="info-label">Ville:</span>
+            <span class="info-value">{{competition.city}}</span>
+          </div>
+
+
+          <span class="spacer"> </span>
+          <div class="info-row">
+            <span class="info-label">Date:</span>
+            <span class="info-value">{{competition.date}}</span>
+          </div>
+          <span class="spacer"> </span>
+          <div class="info-row">
+            <span class="info-label">Heure:</span>
+            <span class="info-value">{{competition.time}}</span>
+          </div>
+        </div>
+        <span class="spacer"> </span>
+        <div class="info-row">
+          <span class="info-label">Site:</span>
+          <span class="info-label">{{competition.site}}</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="reservebtn" >
+          <!--        <button class="btn btn-info bg-primary m-3 " mat-button routerLink="/login" routerLinkActive="active">Reserver</button>-->
+          <button class="btn btn-info bg-primary w-100" mat-button routerLink="/dashboard" routerLinkActive="active">Reserver</button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+  <mat-divider></mat-divider>
+
+</section>
+<mat-divider></mat-divider>
+<div>
+  <app-marque></app-marque>
+</div>
+
+
+<mat-divider></mat-divider>
+<div>
+  <app-footer></app-footer>
+</div>
+
+
+
+
+
+
+<!--
 <div class="d-flex flex-column m-2 homHeader">
 <div>
    <img src="assets/logo.png" class="logo d-block w-auto">
@@ -29,7 +117,7 @@
       </div>
       <div class="product-details">
          <p class="product-description">{{competition.name}}</p>
-<!--        <mat-divider></mat-divider>-->
+&lt;!&ndash;        <mat-divider></mat-divider>&ndash;&gt;
 
         <div class="product-info">
           <div class="info-row">
@@ -37,11 +125,11 @@
             <span class="info-value">{{competition.city}}</span>
           </div>
 
-          <!--<span class="spacer"> </span>
+          &lt;!&ndash;<span class="spacer"> </span>
           <div class="info-row">
             <span class="info-label">Site:</span>
             <span class="info-label">{{competition.site}}</span>
-          </div>-->
+          </div>&ndash;&gt;
 
           <span class="spacer"> </span>
           <div class="info-row">
@@ -65,6 +153,7 @@
         </div>
       </div>
 
+
     </mat-card>
   </div>
   <mat-divider></mat-divider>
@@ -77,3 +166,4 @@
 <div>
   <app-footer></app-footer>
 </div>
+-->

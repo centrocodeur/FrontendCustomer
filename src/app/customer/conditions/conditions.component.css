@@ -1,12 +1,43 @@
-h1 {
+
+div {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #0055a4;
+  color: #fff;
+  padding: 20px;
   text-align: center;
 }
-p {
-  text-align: justify;
-  margin-left: 2vh;
-  margin-right: 2vh;
-  font-size: 2vh;
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
-.btn {
-  font-size: 3vh;
+
+h1, h2 {
+  color: #0055a4;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 20px;
+  }
 }

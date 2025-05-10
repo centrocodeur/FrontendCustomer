@@ -1,6 +1,92 @@
+
+
+
+
+
 <form [formGroup]="searchTicketForm" class="search-form" (submit)="submitForm()">
   <mat-form-field appearance="outline" class="search-form">
-    <mat-label>Enter keyword to search</mat-label>
+    <mat-label>Enter un mot </mat-label>
+    <input matInput formControlName="title">
+    <button mat-button matSuffix color="primary" [disabled]="searchTicketForm.invalid">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+
+<div class="product-list">
+
+  <mat-card class="product-card" *ngFor="let ticket of tickets" style="width: 300px; height: 490px; justify-items: center">
+    <div class="product-image">
+      <img [src]="ticket.processedImg" alt="product-image">
+    </div>
+    <span class="spacer"> </span>
+    <div class="product-details">
+      <h2 class="product-name" routerLink="/customer/ticket/{{ticket.id}}">{{ticket.name}}</h2>
+      <p class="product-description">{{ticket.description}}</p>
+      <mat-divider></mat-divider>
+
+      <div class="product-info">
+        <div class="info-row">
+          <span class="info-label">Prix</span>
+          <span class="info-value text-bg-success">{{ticket.price}} €</span>
+        </div>
+        <span class="spacer"> </span>
+        <div class="info-row">
+          <span class="info-label">Catégorie:</span>
+          <span class="info-value text-bg-info ">{{ticket.categoryName}}</span>
+        </div>
+        <span class="spacer"> </span>
+        <div class="info-row">
+          <span class="info-label">Ville:</span>
+          <span class="info-value text-bg-info">{{ticket.city}}</span>
+        </div>
+        <span class="spacer"> </span>
+
+        <div class="info-row">
+          <span class="info-label">Site:</span>
+          <span class="info-value text-bg-info">{{ticket.site}}</span>
+        </div>
+
+        <span class="spacer"> </span>
+
+        <div class="info-row">
+          <span class="info-label">Date:</span>
+          <span class="info-value text-bg-info">{{ticket.compDate}}</span>
+        </div>
+
+        <span class="spacer"> </span>
+
+        <div class="info-row">
+          <span class="info-label">Heure:</span>
+          <span class="info-value text-bg-info">{{ticket.compTime}}</span>
+        </div>
+
+      </div>
+      <mat-divider></mat-divider>
+      <div class="actions">
+
+        <button mat-raised-button color="primary" class="update-button" (click)="addToCart(ticket.id)">
+          Ajouter au panier
+        </button>
+
+
+      </div>
+    </div>
+
+  </mat-card>
+</div>
+<mat-divider></mat-divider>
+<div>
+  <app-footer></app-footer>
+</div>
+
+
+
+<!--
+<form [formGroup]="searchTicketForm" class="search-form" (submit)="submitForm()">
+  <mat-form-field appearance="outline" class="search-form">
+    <mat-label>Taper un mot </mat-label>
     <input matInput formControlName="title">
     <button mat-button matSuffix color="primary" [disabled]="searchTicketForm.invalid">
       <mat-icon>search</mat-icon>
@@ -48,3 +134,6 @@
 <div>
   <app-footer></app-footer>
 </div>
+-->
+
+
