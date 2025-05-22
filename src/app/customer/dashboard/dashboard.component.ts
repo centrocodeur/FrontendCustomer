@@ -25,7 +25,8 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.getAllTickets();
     this.searchTicketForm = this.fb.group({
-      title: [null, [Validators.required]]
+      //title: [null, [Validators.required]],
+      description: [null, [Validators.required]],
     })
   }
   getAllTickets(){
@@ -39,10 +40,12 @@ export class DashboardComponent implements OnInit{
   }
 
 
+
+
   submitForm(){
     this.tickets= [];
-    const title = this.searchTicketForm.get('title')!.value;
-    this.customerService.getAllTicketsByName(title).subscribe(res =>{
+    const description = this.searchTicketForm.get('description')!.value;
+    this.customerService.getAllTicketsByDescription(description).subscribe(res =>{
       res.forEach(element=>{
         element.processedImg= 'data:image/jpeg;base64,' + element.byteImg;
         this.tickets.push(element);
@@ -53,7 +56,7 @@ export class DashboardComponent implements OnInit{
 
   addToCart(id: any){
     this.customerService.addToCart(id).subscribe(res=>{
-      this.snackBar.open("OK!","Fermer", {duration: 5000})
+      this.snackBar.open("Ticket ajouté au panier!","Fermer", {duration: 5000})
     })
 
   }

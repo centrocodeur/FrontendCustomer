@@ -38,7 +38,7 @@ export class DataService {
 
     {
       id:4,
-      name:"Foot Ball Feminin",
+      name:"Foot Ball Féminin",
       city: "Paris",
       site:"Stade de France",
       date: "26/08/2024",
@@ -61,7 +61,7 @@ export class DataService {
 
     {
       id:6,
-      name:"Gymnastique Feminin",
+      name:"Gymnastique Féminin",
       city: "Paris",
       site:"Bercy Accor Arena",
       date: "10/08/2024",
@@ -94,7 +94,7 @@ export class DataService {
 
     {
       id:9,
-      name:"Judo Feminin",
+      name:"Judo Féminin",
       city: "Paris",
       site:"Bercy Accor Arena",
       date: "30/08/2024",
@@ -104,7 +104,27 @@ export class DataService {
     },
     {
       id:10,
-      name:"Voley Ball Feminin",
+      name:"Voley Ball Féminin",
+      city: "Paris",
+      site:"Bercy Accor Arena",
+      date: "10/08/2024",
+      time: "19h00",
+      urlImg: "../assets/images/voleyball_f.jpg"
+
+    },
+    {
+      id:11,
+      name:"Basket Ball Féminin",
+      city: "Paris",
+      site:"Bercy Accor Arena",
+      date: "04/08/2024",
+      time: "19h00",
+      urlImg: "../assets/images/basket_f.jpg"
+
+    },
+    {
+      id:12,
+      name:"Voley Ball Masculin",
       city: "Paris",
       site:"Bercy Accor Arena",
       date: "10/08/2024",

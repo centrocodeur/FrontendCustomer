@@ -271,6 +271,7 @@
     margin-bottom: 20px;
   }
 
+
   .carouselimage {
     margin-left: auto;;
   }
@@ -284,6 +285,18 @@
     margin: auto;
     height: 800px;
   }
+
+  .product-image{
+    height: 200px ;
+    width: 100%;
+  }
+
+  .product-list .product-card  {
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+
 
 }
 

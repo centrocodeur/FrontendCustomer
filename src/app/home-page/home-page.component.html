@@ -19,8 +19,12 @@
 <mat-divider></mat-divider>
 
 
-<div class="lesOffres" >
+<div *ngIf="!isCustomerLoggedIn" class="lesOffres" >
   <button class="btn btn-info bg-light " mat-button routerLink="/login" routerLinkActive="active">Voir les offres </button>
+</div>
+
+<div *ngIf="isCustomerLoggedIn" class="lesOffres" >
+  <button class="btn btn-info bg-light " mat-button routerLink="/dashboard" routerLinkActive="active">Voir les offres </button>
 </div>
 
 <section class="show_comptetitions">
@@ -58,9 +62,13 @@
           <span class="info-label">{{competition.site}}</span>
         </div>
         <mat-divider></mat-divider>
-        <div class="reservebtn" >
-          <!--        <button class="btn btn-info bg-primary m-3 " mat-button routerLink="/login" routerLinkActive="active">Reserver</button>-->
-          <button class="btn btn-info bg-primary w-100" mat-button routerLink="/dashboard" routerLinkActive="active">Reserver</button>
+        <div  class="d-flex flex-row-reverse">
+        <div *ngIf="!isCustomerLoggedIn" class="reservebtn" >
+                 <button class="btn btn-info bg-primary m-3 " mat-button routerLink="/login" routerLinkActive="active">Reserver</button>
+        </div>
+          <div *ngIf="isCustomerLoggedIn" class="reservebtn" >
+           <button class="btn btn-info bg-primary w-100" mat-button routerLink="/dashboard" routerLinkActive="active">Reserver</button>
+          </div>
         </div>
       </div>
 

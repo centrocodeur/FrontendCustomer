@@ -26,13 +26,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #f8f8f8;
-  min-height:  70vh;
   padding: 20px;
 
 }
 
 .product-list .product-card{
-  width: calc(19.33% - 10px);
+  width: 300px ; /*calc(19.33% - 10px);*/
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -98,6 +97,7 @@
 
 .product-list .product-card  {
   margin-right: 10px;
+
 }
 .empty-card{
   display: flex;
@@ -138,6 +138,9 @@
 .show_comptetitions{
   margin: 10px;
   width: 100%;
+  display: flex;
+  flex-flow: wrap;
+
 }
 .spacer{
   flex: 1;
@@ -152,21 +155,50 @@
 }
 
 .reservebtn{
-  margin: auto;
+  width: 10vh;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+
+
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  line-height: 30px;
+  font-size: 10px;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 20px;
+  min-height:100%
 
 }
 
 
 
+
+
+.product-card  {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 50px;
+}
+
+
 @media screen and (max-width: 768px){
   .product-image{
     height: 200px ;
-    width: 170px;
+    width: 100%;
   }
   .reservebtn{
-    margin: auto;
-
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
+
 
 }
 
@@ -192,10 +224,21 @@
   .lesOffres button{
 
     margin-left: 100vh;
-    width: 10%;
+    width: 30%;
     height: 40px;
     font-size: 24px;
     justify-content: center;
+  }
+
+  .product-card{
+
+    justify-items: center;
+
+  }
+  .reservebtn{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
@@ -220,6 +263,26 @@
     height: 40px;
     font-size: 24px;
   }
+
+/*
+  .reservebtn{
+    width: 10vh;
+    justify-items: center;
+    margin-left: 15vh;
+    margin-top: 25px;
+
+  }*/
+
+  .reservebtn{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-image{
+    height: 200px ;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -242,14 +305,36 @@
 
   .lesOffres button{
 
-    margin-left: 400px;
+    margin-left: 50vh;
+  }
+
+  /*.reservebtn{
+    width: 10vh;
+    justify-items: center;
+    margin-left: 14px;
+    margin-top: 25px;
+
+}*/
+
+  .reservebtn{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-image{
+    height: 200px ;
+    width: 100%;
   }
 
 }
 
 @media screen and (max-width: 992px) {
 
-
+  .product-image{
+    height: 200px ;
+    width: 100%;
+  }
 
   h3 {
     margin-left: 800px;
@@ -259,8 +344,6 @@
   .logo {
     margin-left: 256px;
     margin-right: 256px;
-
-
     width: 230px;
     height: 200px;
     border-radius: 10px;
@@ -279,6 +362,17 @@
     font-weight: bold;
     color: #108ee9;
     margin-bottom: 10px;
+  }
+
+  .lesOffres button{
+
+    margin-left: 35vh;
+  }
+
+  .reservebtn{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
@@ -309,6 +403,89 @@
   .homHeader {
     margin: auto;
     height: 800px;
+  }
+  .lesOffres button{
+    margin-left: 22vh;
+  }
+
+  .product-list{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .product-card{
+    margin-left: 70px;
+    width: 100%;
+  }
+  .reservebtn{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+  h3 {
+    margin-left: 800px;
+    font-size: 35px;
+  }
+
+  .logo {
+    margin-left: 290px;
+    width: 230px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+
+
+  .imgCarrousel {
+    width: 500px;
+    height: 350px;
+  }
+
+  .homHeader {
+    margin: auto;
+    height: 800px;
+  }
+
+  .lesOffres button{
+    margin-left: 12vh;
+    font-size: 15px;
+    justify-content: center;
+  }
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 20px;
+
+  }
+
+  .product-image{
+    height: 200px ;
+    width: 100%;
+  }
+
+  .reservebtn{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+
+  .product-list .product-card  {
+    margin-right: auto;
+    margin-left: auto;
+
   }
 
 }
