@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {UserStorageService} from "../../servicies/storage/user-storage.service";
 
-
+//const BASIC_URL= "http://localhost:8080/";
 const BASIC_URL= "https://studi-jo-backend-production.up.railway.app/";
 @Injectable({
   providedIn: 'root'
@@ -27,10 +27,19 @@ export class CustomerService {
   }
 
   getAllTicketsByName(name:any): Observable<any>{
-    return  this.http.get(BASIC_URL+ `api/customer/search/${name}`, {
+    return  this.http.get(BASIC_URL+ `api/customer/ticket/search/${name}`, {
       headers: this.createAuthorizationHeaders(),
     })
   }
+
+
+  getAllTicketsByDescription(description:any): Observable<any>{
+    return  this.http.get(BASIC_URL+ `api/customer/ticket_by_description/search/${description}`, {
+      headers: this.createAuthorizationHeaders(),
+    })
+  }
+
+
 
   addToCart(ticketId:any): Observable<any>{
     const cartDto= {

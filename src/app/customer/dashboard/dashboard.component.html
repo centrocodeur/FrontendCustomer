@@ -1,12 +1,10 @@
 
 
 
-
-
 <form [formGroup]="searchTicketForm" class="search-form" (submit)="submitForm()">
   <mat-form-field appearance="outline" class="search-form">
     <mat-label>Enter un mot </mat-label>
-    <input matInput formControlName="title">
+    <input matInput formControlName="description">
     <button mat-button matSuffix color="primary" [disabled]="searchTicketForm.invalid">
       <mat-icon>search</mat-icon>
     </button>
