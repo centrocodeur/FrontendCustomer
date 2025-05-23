@@ -10,7 +10,7 @@
             <div class="item-name" [ngClass]="{'highlight': item.highlighted}">
               {{item.ticketName}}
             </div>
-            <div class="item-price">{{item.price| currency}}</div>
+            <div class="item-price">{{item.price}} € </div>
             <div class="quantity-controls">
               <button mat-icon-button [disabled]="item.quantity==1" (click)="decreaseQuantity(item.ticketId)">
                 <mat-icon>remove_circle_outline</mat-icon>
@@ -26,7 +26,7 @@
 
     </div>
     <div class="total-price">
-      Total Amount: {{order.totalAmount |currency}}
+      Total Amount: {{order.totalAmount}} €
     </div>
     <div class="total-price">
       Amount: {{order.amount |currency}}
